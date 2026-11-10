@@ -119,7 +119,7 @@ Those ID numbers correspond to the values in the ULAN column. And we can use the
 ![Working with authorities](steps-openrefine_with_museum_data/step-11.png)
 
 
-### 13. Get your data ready to match ULAN 1
+### 13. Get your data ready to match ULAN (1)
 Head back to your OpenRefine window.
 
 Even though we have ULAN identifiers, they aren't quite in the format that the Getty's service wants in order to provide us with more data.
@@ -128,10 +128,10 @@ Instead of just the number, we want the number preceded by **ulan/**. For exampl
 
 From the dropdown arrow next to ULAN, click on **Edit cells** and then **Transform.**
 
-![Get your data ready to match ULAN 1](steps-openrefine_with_museum_data/step-12.png)
+![Get your data ready to match ULAN (1)](steps-openrefine_with_museum_data/step-12.png)
 
 
-### 14. Get your data ready to transform 2
+### 14. Get your data ready to match ULAN (2)
 In the window that pops up, you can transform the cells' contents using something called the General Refine Expression Language (GREL). (You can read more about GREL [here](https://openrefine.org/docs/manual/grel). It's based on regular expressions, if you know what those are.)
 
 You can do a lot of things with GREL. But for now, let's do something pretty simple: in the **Expression** field, enter the following: 
@@ -146,37 +146,39 @@ You can see a preview of your work in the Preview tab.
 
 When you've done that, click **OK**.
 
-![Get your data ready to transform 2](steps-openrefine_with_museum_data/step-13.png)
+![Get your data ready to match ULAN (2)](steps-openrefine_with_museum_data/step-13.png)
 
 
-### 15. Reconcile your data 1
+### 15. Reconcile your data (1)
 Even though *we* know that ULAN refers to the Getty vocabularies, OpenRefine doesn't know that yet. We'll let it know by **reconciling** our data.
 
 (It's called "Reconcile" because you can also use a service like this to standardize your data. But MOMA has already made our data pretty standard, so we're just doing it so that OpenRefine knows that our values are connected to ULAN values.)
 
+Reconciliation entails a number of steps, but they aren't hard. I've just broken them down into small pieces to avoid confusing you.
+
 From the dropdown arrow next to **ULAN**, click on **Reconcile** and then **Start reconciling...**
 
-![Reconcile your data 1](steps-openrefine_with_museum_data/step-14.png)
+![Reconcile your data (1)](steps-openrefine_with_museum_data/step-14.png)
 
 
-### 16. Reconcile your data 2
+### 16. Reconcile your data (2)
 In the box that pops up, you'll see that one reconciliation service comes built-in to OpenRefine: Wikidata. As it happens, we also have a column with Wiki IDs, so we could use that service if we wanted to.
 
 But we want to use ULAN and OpenRefine doesn't come with that built in. So we'll add it.
 
 Click on **Add standard service...** Then, in the next window, enter this URL: [https://services.getty.edu/vocab/reconcile/](https://services.getty.edu/vocab/reconcile/). Next, click **Add service**. Finally, click **Next**.
 
-![Reconcile your data 2](steps-openrefine_with_museum_data/step-15.png)
+![Reconcile your data (2)](steps-openrefine_with_museum_data/step-15.png)
 
 
-### 17. Reconcile your data with ULAN 4
+### 17. Reconcile your data with ULAN (3)
 In the next window, you'll choose some options for the reconciliation process.
 
 The Getty actually offers multiple services, including a Thesaurus of Geographical Names and the Art and Architecture Thesaurus.
 
 But we already know we want ULAN, so select **ULAN search** and click on **Start reconciling...**
 
-![Reconcile your data with ULAN 4](steps-openrefine_with_museum_data/step-16.png)
+![Reconcile your data with ULAN (3)](steps-openrefine_with_museum_data/step-16.png)
 
 
 ### 18. This will take awhile.
@@ -187,30 +189,30 @@ The museum derives its special status from the “un-queryable” structure of i
 ![This will take awhile.](steps-openrefine_with_museum_data/step-17.png)
 
 
-### 19. Reconcile your data 4
+### 19. Reconcile your data with ULAN (4)
 Let's complete this process by making sure OpenRefine knows that the numbers in the ULAN column refers to the artist's ULAN ID. Click on the ULAN down arrow, then **Reconcile** again, and then **Use values as identifiers**.
 
 In the next window, select the Getty Vocabularies Reconciliation Service, and then press **Next**. 
 
 You'll notice that the ULAN identifiers now appear in blue, to show that they're connected to the Getty service. If you hover over the values, you'll see a preview of the information that ULAN can provide.
 
-![Reconcile your data 4](steps-openrefine_with_museum_data/step-18.png)
+![Reconcile your data with ULAN (4)](steps-openrefine_with_museum_data/step-18.png)
 
 
-### 20. Add a column based on ULAN 1
+### 20. Add a column based on ULAN (1)
 OK, now that we've completed the reconciliation process, we can finally start pulling in data from the Getty!
 
 Click on the ULAN arrow, then **Edit column** and **Add columns from reconciled values...**
 
-![Add a column based on ULAN 1](steps-openrefine_with_museum_data/step-19.png)
+![Add a column based on ULAN (1)](steps-openrefine_with_museum_data/step-19.png)
 
 
-### 21. Add a column based on ULAN 2
+### 21. Add a column based on ULAN (2)
 From the window that pops up, try clicking on the different **Suggested properties**. You'll notice that when you click on some of them, nothing happens. That's because those properties are associated with a different set of Getty authorities, as indicated by the abbreviations in parentheses: **tgn** stands for Thesaurus of Geographic Names and **aat** stands for the Art and Architecture Thesaurus. Our identifiers work with **ULAN**, not these other services.
 
 When you click on a ULAN property, you'll see a preview of the additional data you'll add. Click on a ULAN property that interests you and then press **OK**.
 
-![Add a column based on ULAN 2](steps-openrefine_with_museum_data/step-20.png)
+![Add a column based on ULAN (2)](steps-openrefine_with_museum_data/step-20.png)
 
 
 ### 22. This will take awhile.
